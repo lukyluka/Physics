@@ -1,0 +1,22 @@
+let squareX;
+let squareSize = 50;
+let speed = 2;
+
+function setup() {
+  createCanvas(400, 400);
+  squareX = -squareSize; // Start the square off-screen to the left
+}
+
+function draw() {
+  background(220);
+
+  fill(0, 0, 255); // Blue color
+  rect(squareX, height / 2 - squareSize / 2, squareSize, squareSize);
+
+  squareX += speed;
+
+  // If the square goes off-screen to the right, reset its position
+  if (squareX > width) {
+    squareX = -squareSize;
+  }
+}
